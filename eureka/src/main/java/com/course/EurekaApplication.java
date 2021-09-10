@@ -1,4 +1,4 @@
-package com.sunyue.course;
+package com.course;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,10 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2021/09/09
  */
 @SpringBootApplication
-public class CourseApplication {
+public class EurekaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CourseApplication.class, args);
+		SpringApplication.run(EurekaApplication.class, args);
 	}
 
 }
