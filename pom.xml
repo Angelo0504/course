@@ -9,6 +9,7 @@
 	<modules>
 		<module>eureka</module>
 		<module>system</module>
+		<module>gateway</module>
 	</modules>
 	<name>course</name>
 	<description>online video course system for sunyue </description>
