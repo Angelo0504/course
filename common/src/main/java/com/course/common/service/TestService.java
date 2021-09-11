@@ -4,7 +4,6 @@ import com.course.common.entity.Test;
 import com.course.common.mapper.TestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 /**
@@ -18,7 +17,7 @@ public class TestService {
     private TestMapper testMapper;
 
 public List<Test> list(){
- return testMapper.queryList();
+ return testMapper.selectList(null);
 }
 
 

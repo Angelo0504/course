@@ -27,6 +27,7 @@
 		<spring-cloud.version>2.2.1.RELEASE</spring-cloud.version>
 		<spring.boot>2.3.3.RELEASE</spring.boot>
 		<druid.version>1.1.23</druid.version>
+		<mybatis-plus.version>3.3.0</mybatis-plus.version>
 	</properties>
 
 <!--	spring-cloud依赖管理,父工程依赖管理（所有子模块也共享这里的依赖版本，子模块引入依赖不需要带版本号）-->
@@ -41,16 +42,30 @@
 			</dependency>
 
 			<!--			集成持久层mybatis-->
+<!--			<dependency>-->
+<!--				<groupId>org.mybatis.spring.boot</groupId>-->
+<!--				<artifactId>mybatis-spring-boot-starter</artifactId>-->
+<!--				<version>1.3.2</version>-->
+<!--			</dependency>-->
+			<!--			集成持久层mybatis-plus (切记需要把之前mybatis的依赖注释掉，否则启动会报错)-->
 			<dependency>
-				<groupId>org.mybatis.spring.boot</groupId>
-				<artifactId>mybatis-spring-boot-starter</artifactId>
-				<version>1.3.2</version>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-boot-starter</artifactId>
+				<version>${mybatis-plus.version}</version>
 			</dependency>
+
 			<dependency>
-				<groupId>org.mybatis.generator</groupId>
-				<artifactId>mybatis-generator-maven-plugin</artifactId>
-				<version>1.3.7</version>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-generator</artifactId>
+				<version>${mybatis-plus.version}</version>
 			</dependency>
+
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-annotation</artifactId>
+				<version>${mybatis-plus.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>com.alibaba</groupId>
 				<artifactId>druid</artifactId>
@@ -68,6 +83,20 @@
 				<artifactId>common</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+			</dependency>
+
+<!--			mybatis-plus生成代码需要此模板引擎依赖-->
+			<dependency>
+				<groupId>org.freemarker</groupId>
+				<artifactId>freemarker</artifactId>
+				<version>2.3.28</version>
+				<scope>compile</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -84,24 +113,6 @@
 <!--						</exclude>-->
 <!--					</excludes>-->
 <!--				</configuration>-->
-			</plugin>
-<!--			mybatis-generator 自动生产代码插件-->
-			<plugin>
-				<groupId>org.mybatis.generator</groupId>
-				<artifactId>mybatis-generator-maven-plugin</artifactId>
-				<version>1.3.7</version>
-				<configuration>
-					<configurationFile>src/main/resources/generator/generatorConfig.xml</configurationFile>
-					<overwrite>true</overwrite>
-					<verbose>true</verbose>
-				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>mysql</groupId>
-						<artifactId>mysql-connector-java</artifactId>
-						<version>5.1.40</version>
-					</dependency>
-				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
