@@ -1,7 +1,7 @@
-package com.course.system.service;
+package com.course.common.service;
 
-import com.course.system.domain.Test;
-import com.course.system.mapper.TestMapper;
+import com.course.common.entity.Test;
+import com.course.common.mapper.TestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

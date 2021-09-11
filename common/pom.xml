@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>system</artifactId>
+    <artifactId>common</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -17,11 +17,6 @@
     </properties>
 
     <dependencies>
-<!--        将此工程项目作为注册中心的客户端需要加入此依赖-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -39,15 +34,10 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-<!--        热部署依赖-->
+        <!--        热部署依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
-        </dependency>
-        <!--			应用公共模块-->
-        <dependency>
-            <groupId>com.sunyue</groupId>
-            <artifactId>common</artifactId>
         </dependency>
     </dependencies>
 
